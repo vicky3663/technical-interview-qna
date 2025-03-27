@@ -32,8 +32,9 @@ Types of Inheritance:
 2. Multiple Inheritance (Python, C++): A class inherits from multiple parents.  
 3. Multilevel Inheritance: A class inherits from another derived class.  
 
-Question 2: What is Object-Oriented Programming (OOP)?  
 
+
+Question 2: What is Object-Oriented Programming (OOP)?  
 Junior Engineer Response: 
 Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects. 
 Objects contain **data (attributes/properties)** and **methods (functions)** that operate on 
@@ -54,7 +55,6 @@ class Car {
     console.log(`${this.brand} is starting...`);
   }
 }
-
 const myCar = new Car("Toyota");
 myCar.start();  // Output: Toyota is starting...
 
