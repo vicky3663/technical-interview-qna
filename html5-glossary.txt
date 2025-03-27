@@ -1,0 +1,57 @@
+Question 1: What is the purpose of the `alt` attribute in images?
+
+ Junior Engineer Response:
+The `alt` attribute in images is used to provide alternative text that 
+describes the image. This text is displayed if the image fails to load and 
+is also used by screen readers to help visually impaired users understand the content. It improves accessibility and SEO.
+Example:
+<img src="logo.png" alt="Company logo">
+If `logo.png` doesn’t load, the text "Company logo" will be shown instead.
+
+
+**Mid-Level Engineer Response:
+The `alt` attribute serves multiple purposes:
+1. Accessibility: Screen readers use the `alt` text to describe images for visually impaired users.
+2. SEO Optimization: Search engines index `alt` text, improving a website’s ranking.
+3. Fallback Content: If an image fails to load, the `alt` text provides context.
+
+Best practices include writing descriptive yet concise `alt` text, avoiding redundant words like “image of,” and skipping it for decorative images.
+
+Example:
+<img src="graph.png" alt="Line graph showing sales growth from 2020 to 2024">
+This ensures users understand the image's purpose even if they can’t see it.
+
+
+Question 2: Explain the `meta` tags in HTML5?
+Junior Engineer Response:
+Meta tags in HTML5 are used to provide metadata about a webpage. They go inside the "<head>" section and help with SEO, page descriptions, viewport settings, and character encoding.  
+
+Example:
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="This is a website about technology news">
+<meta name="keywords" content="tech, news, gadgets">
+
+- charset="UTF-8" sets the character encoding.  
+- viewport ensures responsiveness on different screen sizes.  
+- description provides a summary for search engines.  
+- keywords help with search engine ranking (though modern SEO relies more on content).  
+
+Mid-Level Engineer Response: 
+Meta tags provide essential "metadata" that improves search engine optimization (SEO), social media sharing, and browser behavior. They don’t display content but influence how a page is indexed and rendered.  
+
+Key Meta Tags & Their Uses:  
+1. SEO & Search Engine Metadata:
+   <meta name="description" content="A blog about AI advancements and software development.">
+   - Helps search engines display a relevant snippet in search results.  
+
+2. Viewport Control (Mobile Responsiveness):  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   - Ensures a webpage adapts to different screen sizes.  
+   - Enhances link previews when shared on platforms like Facebook or Twitter.  
+
+4. Character Encoding & Compatibility: 
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   - Ensures special characters display correctly and improves browser compatibility.  
+By strategically using meta tags, developers optimize page visibility, user experience, and compatibility across devices and platforms.
