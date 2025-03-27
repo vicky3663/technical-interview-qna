@@ -1,0 +1,75 @@
+Question 1: What is inheritance in OOP?
+Junior Engineer Response:  
+Inheritance is a fundamental OOP concept that allows one class (child) 
+to inherit properties and methods from another class (parent). This promotes 
+code reuse and reduces duplication.  
+
+Example in JavaScript: 
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  makeSound() {
+    console.log("Some generic sound");
+  }
+}
+
+class Dog extends Animal {
+  makeSound() {
+    console.log("Bark! Bark!");
+  }
+}
+
+const myDog = new Dog("Buddy");
+myDog.makeSound(); // Output: Bark! Bark!
+
+Mid-Level Engineer Response: 
+Inheritance is a mechanism in OOP where a hild class acquires attributes and behaviors (methods) 
+from a parent class. This follows the "is-a" relationship, meaning a Dog is an Animal.  
+
+Types of Inheritance:  
+1. Single Inheritance: A class inherits from one parent.  
+2. Multiple Inheritance (Python, C++): A class inherits from multiple parents.  
+3. Multilevel Inheritance: A class inherits from another derived class.  
+
+Question 2: What is Object-Oriented Programming (OOP)?  
+
+Junior Engineer Response: 
+Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects. 
+Objects contain **data (attributes/properties)** and **methods (functions)** that operate on 
+the data.  
+
+Key OOP Concepts:  
+1. Encapsulation: Hiding implementation details.  
+2. Abstraction: Showing only necessary details.  
+3. Inheritance: Reusing code from parent classes.  
+4. Polymorphism : Using the same method in different ways.  
+
+Example in JavaScript:
+class Car {
+  constructor(brand) {
+    this.brand = brand;
+  }
+  start() {
+    console.log(`${this.brand} is starting...`);
+  }
+}
+
+const myCar = new Car("Toyota");
+myCar.start();  // Output: Toyota is starting...
+
+
+Mid-Level Engineer Response:  
+OOP is a structured programming approach where real-world entities are modeled as objects. 
+It improves code organization, scalability, and maintainability.  
+
+Four Pillars of OOP: 
+1. Encapsulation:Bundling data and methods together while restricting direct access.  
+   - Example: Private variables in Python (`__variable`).  
+2. Abstraction: Hiding complex implementation and exposing only relevant details.  
+   - Example: `get()` and `set()` methods in Java.  
+3. Inheritance: One class derives properties and behavior from another.  
+   - Example: `class Dog extends Animal`.  
+4. Polymorphism: Methods or functions behave differently based on input or object type.  
+   - Example: Method overriding in Python.  
+
