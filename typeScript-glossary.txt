@@ -1,0 +1,51 @@
+Question 1: What is the difference between `.ts` and `.tsx` extensions in TypeScript?
+
+Junior-Level Answer:
+`.ts` and `.tsx` are both TypeScript file extensions. The key difference is that `.tsx` is used when writing TypeScript files that contain JSX syntax (used in React). while .ts is used for regular TypeScript files.
+
+Mid-Level Answer:
+In TypeScript, `.ts` files are standard TypeScript files, while `.tsx` files allow JSX syntax, which is essential for React development. The `.tsx` extension enables TypeScript to recognize JSX elements, ensuring proper type checking for React components. Without `.tsx`, TypeScript would throw errors when encountering JSX.
+
+
+
+Question 2: List the built-in types in TypeScript.
+
+Junior-Level Answer:
+TypeScript provides several built-in types that help developers define variables and functions with strict type checking. The basic built-in types include:
+
+- number: Represents numeric values.
+- string: Represents textual data.
+- boolean: Represents `true` or `false` values.
+- null: Represents an explicitly empty value.
+- undefined: Represents an uninitialized value.
+- any: Allows any type of value (not recommended for strict typing).
+- void: Used for functions that do not return a value.
+
+Mid-Level Answer:
+TypeScript extends JavaScript’s primitive types with additional features. The built-in types can be categorized as follows:
+
+1. **Primitive Types**
+   - number: Represents integers and floating-point numbers (let num: number = 42;).
+   - string: Represents text (let msg: string = "Hello";).
+   - boolean: Represents `true` or `false` values (let isReady: boolean = true;).
+   - bigint: Represents large integers (let big: bigint = 9007199254740991n;).
+   - symbol: Represents unique identifiers (const sym: symbol = Symbol("id");).
+   - null and undefined: Used to represent empty or uninitialized values.
+
+2. **Object and Special Types**
+   - object: Represents non-primitive types (let obj: object = { name: "Alice" };).
+   - array: Declared using `Array<Type>` or `Type[]` (let nums: number[] = [1, 2, 3];).
+   - tuple: Fixed-size arrays with defined types (let person: [string, number] = ["Alice", 30];`).
+   - enum: Defines named constants (`enum Color { Red, Green, Blue }).
+   - any: Disables type checking (should be avoided in strict mode).
+   
+   Example:
+let age: number = 25;
+let username: string = "John";
+let isActive: boolean = true;
+let coordinates: [number, number] = [40.7128, -74.0060]; // Tuple
+
+enum Role { Admin, User, Guest }
+let myRole: Role = Role.Admin; // Enum
+
+let person: object = { name: "Alice", age: 30 }; // Object type
