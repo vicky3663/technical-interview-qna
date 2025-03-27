@@ -1,0 +1,90 @@
+Question 1:What are Props in React?  
+
+Junior Engineer Response: 
+Props (short for "properties") in React are 
+used to pass data from a parent component to a child component. 
+They allow components to be dynamic and reusable by providing different values. 
+Props are read-only, meaning they cannot be modified inside the child component.  
+
+Example:
+function Greeting(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+function App() {
+  return <Greeting name="Alice" />;
+}
+Here, "Alice" is passed as a prop to the Greeting component, which then displays "Hello, Alice!".  
+
+
+Mid-Level Engineer Response:
+In React, props allow components to receive dynamic data and behave in a reusable way. Props follow
+ a one-way data flow, meaning they can only be passed from **parent to child**, not vice versa. Since props 
+ are immutable(meaning they cannot be changed)
+ modifying them directly inside a child component is not allowed.  
+
+Props can also be destructured for cleaner syntax, and default props can be used to provide fallback values.  
+
+Example with Destructuring & Default Props:  
+function Greeting({ name = "Guest" }) {
+  return <h1>Hello, {name}!</h1>;
+}
+
+function App() {
+  return (
+    <>
+      <Greeting name="Alice" />
+      <Greeting />  {/* Uses default prop "Guest" */}
+    </>
+  );
+}
+
+Here, if no"name"is provided, it defaults to "Guest".
+
+
+Question 2: What are the major features of React?
+Junior Engineer Response: 
+React is a JavaScript library for building user interfaces. Its key features include:  
+
+1. Component-Based Architecture:UI is broken into reusable components.  
+2. JSX (JavaScript XML): Allows writing HTML-like syntax inside JavaScript.  
+3. Virtual DOM: Improves performance by updating only changed parts of the UI.  
+4.one-Way Data Binding : Data flows in a single direction for better control.  
+5.State Management:useState` and `useEffect` help manage component state.  
+
+Example of a Simple Component: 
+function Welcome() {
+  return <h1>Hello, React!</h1>;
+}
+
+
+Mid-Level Engineer Response: 
+React’s core features enable efficient UI development with a focus on reusability and performance:  
+
+1. Component-Based Architecture 
+   - UI is split into modular, reusable components.  
+   - Example:  
+     
+     function Button({ label }) {
+       return <button>{label}</button>;
+     }
+     
+  
+2. JSX (JavaScript XML)
+   - A syntactic sugar that allows writing HTML within JavaScript.  
+   - Compiles to JavaScript via Babel.  
+3. Virtual DOM
+   - Instead of updating the real DOM directly, React maintains a lightweight Virtual DOM and applies changes efficiently.  
+4. One-Way Data Binding  
+   - Parent components pass data to children via **props**, ensuring predictable behavior.  
+5. State Management 
+   - Components manage their own state using `useState()`, and lifecycle behavior using `useEffect()`.  
+   - Example:  
+     function Counter() {
+       const [count, setCount] = useState(0);
+       return <button onClick={() => setCount(count + 1)}>Count: {count}</button>;
+     }
+6. React Hooks (Functional Components Enhancement) 
+   - `useState`, `useEffect`, `useContext`, etc., allow managing state and side effects without class components.  
+7. React Router (For Navigation)  
+   - Enables client-side routing without page reloads.  
