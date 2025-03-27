@@ -1,0 +1,95 @@
+Question 1: what are the three ways to apply CSS to an HTML page?
+Junior Engineer Response:  
+There are "three main ways" to apply CSS to an HTML page:  
+
+1. Inline CSS: Applied directly to an HTML element using the "style" attribute.  
+2. Internal CSS: Written inside a "<style>" tag within the "<head>" section of the HTML file.  
+3. External CSS: Stored in a separate ".css" file and linked using the "<link>" tag.  
+
+Example for Each Method:
+Inline CSS:
+<p style="color: blue; font-size: 18px;">This is a paragraph with inline CSS.</p>
+
+Internal CSS:
+<style>
+  p {
+    color: red;
+    font-size: 20px;
+  }
+</style>
+
+External CSS:
+<link rel="stylesheet" href="styles.css">
+
+Mid-Level Engineer Response: 
+CSS can be applied to a webpage in three ways, each with **advantages and drawbacks**:  
+
+1. Inline CSS  
+   - Applied directly using the `style` attribute on elements.  
+   - Best for: Quick fixes, overriding other styles, email templates.  
+   - Downside: Hard to maintain, reduces code reusability.  
+   - Example:
+     <button style="background-color: green; color: white;">Click Me</button>
+     
+2. Internal CSS (Embedded CSS) 
+   - Defined within the `<style>` tag inside `<head>`.  
+   - Best for: Small projects, one-page websites, or styling specific pages differently.  
+   - Downside: Harder to maintain for large projects.  
+   - Example:  
+     <head>
+       <style>
+         body {
+           background-color: lightgray;
+           font-family: Arial, sans-serif;
+         }
+       </style>
+     </head>
+
+3. External CSS  
+   -Stored separately in a ".css" file and linked using "<link>".  
+   -Best for: Large projects, consistency across multiple pages, easy maintenance.  
+   -Downside: Requires an extra HTTP request to load the CSS file.  
+   -Example:
+     <link rel="stylesheet" href="styles.css">
+     
+     styles.css
+     h1 {
+       color: navy;
+       text-align: center;
+     }
+    
+
+Question 2: what is css?
+Junior Engineer Response:  
+CSS (Cascading Style Sheets) is a "stylesheet language" 
+used to style and layout web pages. It controls how HTML elements appear on the screen by defining properties like colors, fonts, spacing, and positioning.
+
+Example:
+p {
+  color: blue;
+  font-size: 18px;
+}
+This makes all "<p>" elements blue and 18px in size.
+
+
+Mid-Level Engineer Response:
+CSS (Cascading Style Sheets) is a "design language" at enhances the presentation of HTML content by controlling styles, layouts, and responsiveness. It **separates content from design**, making web pages more visually appealing and easier to maintain.
+
+Key Features of CSS:
+1. **Selectors & Properties** – Target elements and define their styles.  
+2. **Cascading & Inheritance** – Resolves conflicting styles by following a priority order.  
+3. **Box Model** – Defines spacing, margins, borders, and padding around elements.  
+4. **Flexbox & Grid** – Provides modern layout techniques for responsive design.  
+
+Example:
+ External CSS file
+body {
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: navy;
+  text-align: center;
+}
+This applies a light gray background, uses Arial font, and centers the heading with a navy color.
