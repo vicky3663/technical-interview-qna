@@ -9,7 +9,7 @@ Example:
 If `logo.png` doesn’t load, the text "Company logo" will be shown instead.
 
 
-**Mid-Level Engineer Response:
+Mid-Level Engineer Response:
 The `alt` attribute serves multiple purposes:
 1. Accessibility: Screen readers use the `alt` text to describe images for visually impaired users.
 2. SEO Optimization: Search engines index `alt` text, improving a website’s ranking.
