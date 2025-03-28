@@ -1,0 +1,88 @@
+Question 1: How to unit test an object with database queries?
+
+Junior-Level Engineer Response:
+To unit test an object with "database queries", use "mocking" to replace actual database calls with fake data.  
+This prevents modifying the real database and makes tests run faster.
+
+Example:
+jest.mock("db", () => ({
+  query: jest.fn(() => Promise.resolve([{ id: 1, name: "Test User" }])),
+}));
+
+
+Mid-Level Engineer Response:
+Testing objects with "database queries" should be done using "mocking, stubbing, or in-memory databases".
+
+"Best Practices:"
+"Use Dependency Injection" – Separate DB logic from business logic.  
+"Mock the Database Layer" – Replace actual DB queries with fake responses.  
+"Use In-Memory Databases" (e.g., SQLite for testing).  
+
+"Example Using Jest & Mocking:"
+import { getUser } from "./userService";  
+import db from "./db";  
+
+jest.mock("./db");  // Mock the database module  
+
+test("should return a user", async () => {  
+  db.query.mockResolvedValue([{ id: 1, name: "Alice" }]);  
+
+  const user = await getUser(1);  
+  expect(user.name).toBe("Alice");  
+});
+
+
+
+
+Question 2: Difference between unit testing and functional testing?
+
+Junior-Level Engineer Response:
+-"Unit Testing": Tests "individual functions" or components.  
+-"Functional Testing": Tests "how the system works as a whole".  
+
+Example:  
+-"Unit Test": Checking if a function returns the right output.  
+-"Functional Test": Checking if a user can log in successfully.
+
+
+"Example of Unit Test":
+function add(a: number, b: number): number { return a + b; }
+test("adds numbers correctly", () => {
+  expect(add(2, 3)).toBe(5);
+});
+```
+
+"Example of Functional Test (End-to-End)"
+cy.visit("/login");
+cy.get("input[name='username']").type("testUser");
+cy.get("input[name='password']").type("password123");
+cy.get("button[type='submit']").click();
+cy.url().should("include", "/dashboard");
+
+
+Question 3: What is Mocking?
+
+Junior-Level Engineer Response:
+Mocking is the process of creating "fake objects" to replace "real dependencies" during testing.  
+It helps test functions "without relying on real databases, APIs, or external services".
+
+Example:
+jest.mock("./db");  // Fake the database module
+
+
+
+Mid-Level Engineer Response:
+"Mocking" is the practice of "simulating dependencies" (like databases, APIs, or services) in "unit tests".  
+ "Types of Mocking:"
+ "Manual Mocks" – Custom fake objects.  
+"Automated Mocks" – Generated using tools (e.g., Jest, Sinon).  
+"Stubs" – Predefined fake responses.  
+"Spies" – Track function calls.
+
+"Example Using Jest Mock Functions":
+const fetchData = jest.fn(() => Promise.resolve("Mocked Data"));
+
+test("should return mocked data", async () => {
+  const result = await fetchData();
+  expect(result).toBe("Mocked Data");
+});

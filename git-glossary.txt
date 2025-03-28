@@ -1,0 +1,79 @@
+Question 1: What is the difference between Git and SVN?
+
+Junior-Level Engineer Response:
+Git and SVN are both version control systems, but Git is distributed, while SVN is centralized.
+-Git: Every developer has a full copy of the repository.
+-SVN: Code is stored in a central repository, and developers pull the latest version.
+
+Example:
+# Git clone (full repo)
+git clone https://github.com/user/repo.git
+
+# SVN checkout (only latest version)
+svn checkout https://svn.example.com/repo
+
+
+
+Mid-Level Engineer Response:
+Key Differences Between Git and SVN:
+Use Git for fast, flexible version control.  
+Use SVN only for legacy projects that require central control.
+
+
+Question 2: What is the command to write a commit message to Git?
+
+Junior-Level Engineer Response:
+The Git command to commit with a message is:
+git commit -m "Your commit message"
+This saves changes to the local repository.
+
+
+Mid-Level Engineer Response:
+A commit message describes changes in a version.  
+Common ways to commit:
+
+Basic commit:
+git commit -m "Fixed login bug"
+
+
+Multi-line commit (better for detailed descriptions):
+git commit
+# Then, type commit message in the editor
+
+
+ Amend last commit (if you forgot something):
+git commit --amend -m "Updated commit message"
+Best Practice: Use present tense, short & descriptive messages.
+
+
+
+Question 3: What is Git?
+
+Junior-Level Engineer Response:
+Git is a distributed version control system (VCS) that helps developers track changes in code, 
+collaborate, and manage different versions.
+
+Example:
+git init    # Initialize a new repo
+git add .   # Stage changes
+git commit -m "Initial commit"  # Save changes
+git push origin main  # Push to remote repo
+
+
+Mid-Level Engineer Response:
+Git is an "open-source distributed version control system" designed for:
+- Tracking code changes
+- Collaboration among developers
+- Managing project versions efficiently
+
+Key Features:
+- Branching & Merging: Work on features independently.
+- Distributed System: No need for a central server.
+- Fast Performance: All operations happen locally.
+
+Example Workflow:
+git clone https://github.com/user/repo.git  # Clone repository
+git checkout -b feature-branch  # Create a new branch
+git add .  # Stage changes
+git commit -m "Added new feature"
+git push origin feature-branch  # Push to remote

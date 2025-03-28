@@ -1,0 +1,84 @@
+Question 1: What is a DDoS attack?
+
+Junior-Level Engineer Response:
+A "DDoS (Distributed Denial-of-Service) attack" is a cyber attack where multiple systems flood a target server with excessive requests, causing it to slow down or crash.
+
+Example:
+- A hacker uses a "botnet" (infected devices) to send millions of requests to a website, making it inaccessible.
+
+
+Mid-Level Engineer Response:
+A "DDoS attack" is a "malicious attempt to disrupt a service" by overwhelming it with "fake traffic" from multiple sources.  
+
+"Types of DDoS Attacks:"
+"Volumetric Attack" – Floods bandwidth (e.g., UDP flood).  
+"Protocol Attack" – Exploits network protocols (e.g., SYN flood).  
+"Application-Layer Attack" – Targets application-level processes (e.g., HTTP flood).  
+
+"Prevention Techniques:"
+- Use "rate limiting" to limit excessive requests.
+- Deploy "Web Application Firewalls (WAFs)".
+- Use "CDN services" like Cloudflare to absorb attacks.
+
+Example:
+iptables -A INPUT -p tcp --dport 80 -m limit --limit 10/sec -j ACCEPT  # Limits TCP connections
+
+
+
+Question 2: What is a Vulnerability?
+
+Junior-Level Engineer Response:
+A "vulnerability" is a weakness in software, hardware, or a network that attackers can exploit to gain "unauthorized access".
+
+Example:
+-Using "weak passwords" or "outdated software" makes systems vulnerable.
+
+
+Mid-Level Engineer Response:
+A "vulnerability" is a "security flaw" that allows an attacker to "compromise confidentiality, integrity, or availability" of a system.  
+
+"Types of Vulnerabilities:"
+1"Software Vulnerability" – Bugs in code (e.g., Buffer Overflow).  
+2"Configuration Vulnerability" – Weak security settings (e.g., default passwords).  
+3 "qsHuman Error" – Phishing or social engineering attacks.  
+
+"Prevention:"
+- "Regular security updates".
+- "Penetration testing" to identify weak points.
+- "Principle of Least Privilege (PoLP)" – Limit user permissions.
+
+
+
+Question 3: What is SQL Injection?
+
+Junior-Level Engineer Response:
+"SQL Injection (SQLi)" is a cyber attack where an attacker injects "malicious SQL queries" into an application to manipulate a database.
+
+Example:
+-A hacker inputs `"' OR '1'='1"` in a login form to bypass authentication.
+
+
+Mid-Level Engineer Response:
+"SQL Injection" is an attack that exploits "vulnerable SQL queries" to:
+Bypass authentication  
+Steal or delete database records  
+Gain unauthorized admin access  
+
+"Types of SQL Injection:"
+"Classic SQLi" – Direct injection of malicious SQL.  
+"Blind SQLi" – Extracts data using conditional responses.  
+"Time-based SQLi" – Uses time delays to infer database structure.  
+
+ "Prevention Techniques:"
+Use "prepared statements & parameterized queries".  
+Sanitize user input & validate data.  
+Restrict "database permissions" to limit access.  
+
+Example:
+// Bad Example (Vulnerable to SQL Injection)
+let query = "SELECT * FROM users WHERE username = '" + userInput + "'";  
+
+// Good Example (Using Prepared Statements)
+const query = "SELECT * FROM users WHERE username = ?";
+database.execute(query, [userInput]);
+

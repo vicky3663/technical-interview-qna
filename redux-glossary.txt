@@ -1,0 +1,109 @@
+Question 1: Do you need to keep all component states in the Redux store?
+
+Junior-Level Engineer Response:
+No, not all component states need to be stored in Redux. Redux is useful for managing global state, 
+but local component state (such as UI toggles, form inputs, or modal visibility) can be handled using 
+React’s useState().
+
+Example:
+const [isOpen, setIsOpen] = useState(false); // Local UI state
+Only global state (like user authentication or theme preferences) should be in Redux.
+
+
+Mid-Level Engineer Response:
+It depends on the scope and persistence of the state. The "Redux store" is designed for global 
+state management, which includes:
+
+✅ **Keep in Redux:**  
+- Authentication data  
+- User preferences (theme, language)  
+- API-fetched data (e.g., posts, products)  
+- Complex UI state shared across components  
+
+❌ **Keep in Local State (`useState`)**  
+- Temporary UI toggles (dropdowns, modals)  
+- Form inputs  
+- Component-specific logic  
+
+Example:
+```tsx
+const userSlice = createSlice({
+  name: "user",
+  initialState: { name: "", email: "" },
+  reducers: { setUser: (state, action) => action.payload }
+});
+export const { setUser } = userSlice.actions;
+export default userSlice.reducer;
+```
+**Rule of Thumb:** If multiple components rely on the same data, store it in Redux. Otherwise, keep it local.
+
+---
+
+Question 2: What is Redux?
+
+Junior-Level Engineer Response:
+Redux is a **state management library** that helps manage application-wide state in JavaScript/TypeScript applications. It follows a unidirectional data flow and uses a **store** to hold state globally.
+
+Example:
+```tsx
+const store = configureStore({ reducer: rootReducer });
+```
+Redux is often used with **React** for scalable state management.
+
+---
+
+Mid-Level Engineer Response:
+Redux is a **predictable state container** for JavaScript applications. It is based on:
+1. **Store:** Holds the global state.
+2. **Actions:** Define events that change the state.
+3. **Reducers:** Specify how state updates happen based on actions.
+4. **Dispatch:** Sends actions to reducers.
+5. **Selectors:** Extract data from the store.
+
+Example:
+```tsx
+const counterSlice = createSlice({
+  name: "counter",
+  initialState: { value: 0 },
+  reducers: {
+    increment: (state) => { state.value += 1; },
+    decrement: (state) => { state.value -= 1; }
+  }
+});
+export const { increment, decrement } = counterSlice.actions;
+export default counterSlice.reducer;
+```
+Redux is useful for **large-scale applications** where managing state across components can become complex.
+
+---
+
+Question 3: What is Redux DevTools?
+
+Junior-Level Engineer Response:
+Redux DevTools is a **browser extension** that helps developers inspect Redux state changes, time travel, and debug applications efficiently.
+
+To enable it in a React project:
+```tsx
+import { configureStore } from "@reduxjs/toolkit";
+const store = configureStore({ reducer: rootReducer });
+```
+Then, install the **Redux DevTools Extension** in your browser.
+
+---
+
+Mid-Level Engineer Response:
+Redux DevTools provides **powerful debugging capabilities** by allowing:
+- **Time-travel debugging** (replay actions)
+- **State snapshots** (inspect past states)
+- **Action logging** (track dispatched actions)
+
+### **Setup:**
+1. Install Redux DevTools extension in Chrome.
+2. Install the package in your project:
+   ```sh
+   npm install redux-devtools-extension
+   ```
+3. Integrate with your store:
+   ```tsx
+   import { composeWithDevTools } from "redux-devtools-extension";
+   const store = createStore(rootReducer, composeWithDevTools());
